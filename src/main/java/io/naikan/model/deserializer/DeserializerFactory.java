@@ -1,6 +1,6 @@
 package io.naikan.model.deserializer;
 
-import io.naikan.model.deserializer.json.JsonDeserializer;
+import java.util.ServiceLoader;
 
 public final class DeserializerFactory {
 
@@ -8,6 +8,18 @@ public final class DeserializerFactory {
     }
 
     public static Deserializer newJsonDeserializer() {
-        return new JsonDeserializer();
+        return loadJsonDeserializer();
+    }
+
+    private static Deserializer loadJsonDeserializer() {
+        ServiceLoader<Deserializer> deserializers = ServiceLoader.load(Deserializer.class);
+
+        for (Deserializer deserializer : deserializers) {
+            if (deserializer.supports("json")) {
+                return deserializer;
+            }
+        }
+
+        return null;
     }
 }

@@ -30,7 +30,7 @@ public final class JsonSerializer10 extends AbstractJsonSerializer {
     @Override
     public JsonNode toJsonNode(Bom bom) {
         try {
-            return getMapper().readTree(toJson(modifyBom(bom), false));
+            return mapper().readTree(toJson(modifyBom(bom), false));
         } catch (SerializerException | JsonProcessingException e) {
             return null;
         }

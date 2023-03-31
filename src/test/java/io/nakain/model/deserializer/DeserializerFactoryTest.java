@@ -3,7 +3,7 @@ package io.nakain.model.deserializer;
 
 import io.naikan.model.deserializer.Deserializer;
 import io.naikan.model.deserializer.DeserializerFactory;
-import io.naikan.model.deserializer.json.JsonDeserializer;
+import io.naikan.model.deserializer.json.DefaultJsonDeserializer;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -14,6 +14,6 @@ class DeserializerFactoryTest {
     void shouldReturnJsonDeserializer() {
         Deserializer deserializer = DeserializerFactory.newJsonDeserializer();
 
-        assertTrue(deserializer instanceof JsonDeserializer);
+        assertTrue(deserializer instanceof DefaultJsonDeserializer);
     }
 }
