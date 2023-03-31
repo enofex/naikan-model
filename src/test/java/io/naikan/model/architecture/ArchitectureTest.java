@@ -5,12 +5,12 @@ import java.util.Collection;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
 
-import io.naikan.test.architecture.ArchUnitTestsFactory;
+import io.naikan.test.architecture.ArchUnitTestsConfig;
 
 class ArchitectureTest {
 
     @TestFactory
     Collection<DynamicTest> testArchitecture() {
-        return ArchUnitTestsFactory.createTests();
+        return ArchUnitTestsConfig.defaultConfig().getDynamicTests();
     }
 }
