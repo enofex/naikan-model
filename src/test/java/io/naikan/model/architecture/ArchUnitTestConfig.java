@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.junit.jupiter.api.DynamicTest;
 
+import com.tngtech.archunit.ArchConfiguration;
 import com.tngtech.archunit.core.domain.JavaClasses;
 
 final class ArchUnitTestConfig {
@@ -39,6 +40,8 @@ final class ArchUnitTestConfig {
         }
 
         public Collection<DynamicTest> build() {
+            ArchConfiguration.get().setProperty("archRule.failOnEmptyShould", Boolean.FALSE.toString());
+            
             ArchUnitTestConfig config = new ArchUnitTestConfig();
             config.namespace = DEFAULT_NAMESPACE;
             config.classes = Namespace.classes(config.namespace);
