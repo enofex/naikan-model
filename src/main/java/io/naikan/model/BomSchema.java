@@ -1,16 +1,15 @@
 package io.naikan.model;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Map;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.networknt.schema.JsonSchema;
 import com.networknt.schema.JsonSchemaFactory;
 import com.networknt.schema.SchemaValidatorsConfig;
 import com.networknt.schema.SpecVersionDetector;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
 
 public abstract class BomSchema {
 
@@ -39,8 +38,12 @@ public abstract class BomSchema {
 
     public JsonSchema jsonSchema(BomSchema.Version schemaVersion, ObjectMapper mapper) throws IOException {
         SchemaValidatorsConfig config = new SchemaValidatorsConfig();
-        Map<String, String> offlineMappings = new HashMap<>();
-        offlineMappings.put("https://naikan.io/schema/bom-1.0.schema.json", getClass().getClassLoader().getResource("bom-1.0.schema.json").toExternalForm());
+        Map<String, String> offlineMappings = Map.of(
+                "https://naikan.io/schema/bom-1.0.schema.json",
+                getClass()
+                        .getClassLoader()
+                        .getResource("bom-1.0.schema.json")
+                        .toExternalForm());
         config.setUriMappings(offlineMappings);
         JsonNode schemaNode = mapper.readTree(jsonSchemaAsStream(schemaVersion));
         JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersionDetector.detect(schemaNode));

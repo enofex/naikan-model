@@ -27,6 +27,10 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
         return new Builder();
     }
 
+    public Builder toBuilder() {
+        return new Builder(this);
+    }
+
     public static final class Builder {
 
         private String id;
@@ -46,6 +50,24 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
         private Deployments deployments;
 
         private Builder() {
+        }
+
+        private Builder(Bom bom) {
+            this.id = bom.id();
+            this.bomFormat = bom.bomFormat();
+            this.specVersion = bom.specVersion();
+            this.timestamp = bom.timestamp();
+            this.project = bom.project();
+            this.organization = bom.organization();
+            this.teams = bom.teams();
+            this.developers = bom.developers();
+            this.contacts = bom.contacts();
+            this.technologies = bom.technologies();
+            this.licenses = bom.licenses();
+            this.documentations = bom.documentations();
+            this.integrations = bom.integrations();
+            this.tags = bom.tags();
+            this.deployments = bom.deployments();
         }
 
         public Builder id(String id) {
@@ -124,7 +146,9 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
         }
 
         public Bom build() {
-            return new Bom(this.id, this.bomFormat, this.specVersion, this.timestamp, this.project, this.organization, this.teams, this.developers, this.contacts, this.technologies, this.licenses, this.documentations, this.integrations, this.tags, this.deployments);
+            return new Bom(this.id, this.bomFormat, this.specVersion, this.timestamp, this.project, this.organization, this.teams,
+                    this.developers, this.contacts, this.technologies, this.licenses, this.documentations, this.integrations, this.tags,
+                    this.deployments);
         }
     }
 
