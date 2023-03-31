@@ -8,7 +8,7 @@ import com.tngtech.archunit.core.domain.JavaClasses;
 
 final class ArchUnitTestConfig {
 
-    private static final String DEFAULT_NAMESPACE = "io.naikan.";
+    private static final String DEFAULT_NAMESPACE = "io.naikan.model.";
 
     private String namespace;
     private JavaClasses classes;
