@@ -6,9 +6,13 @@ import io.naikan.model.Developer;
 import io.naikan.model.Developers;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.util.List;
 
 final class DevelopersDeserializer extends AbstractDeserializer<Developers> {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     static final DevelopersDeserializer INSTANCE = new DevelopersDeserializer();
 

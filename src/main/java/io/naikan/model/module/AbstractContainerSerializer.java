@@ -6,8 +6,12 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import io.naikan.model.AbstractContainer;
 
 import java.io.IOException;
+import java.io.Serial;
 
 class AbstractContainerSerializer extends StdSerializer<AbstractContainer> {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     static final AbstractContainerSerializer INSTANCE = new AbstractContainerSerializer();
 

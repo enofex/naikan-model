@@ -6,9 +6,13 @@ import io.naikan.model.Team;
 import io.naikan.model.Teams;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.util.List;
 
 final class TeamsDeserializer extends AbstractDeserializer<Teams> {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     static final TeamsDeserializer INSTANCE = new TeamsDeserializer();
 

@@ -6,9 +6,13 @@ import io.naikan.model.Integration;
 import io.naikan.model.Integrations;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.util.List;
 
 final class IntegrationsDeserializer extends AbstractDeserializer<Integrations> {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     static final IntegrationsDeserializer INSTANCE = new IntegrationsDeserializer();
 

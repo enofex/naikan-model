@@ -6,9 +6,13 @@ import io.naikan.model.License;
 import io.naikan.model.Licenses;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.util.List;
 
 final class LicensesDeserializer extends AbstractDeserializer<Licenses> {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     static final LicensesDeserializer INSTANCE = new LicensesDeserializer();
 

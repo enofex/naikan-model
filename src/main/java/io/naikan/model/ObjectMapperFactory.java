@@ -11,6 +11,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.naikan.model.module.NaikanModule;
 
 import java.io.IOException;
+import java.io.Serial;
 
 public final class ObjectMapperFactory {
 
@@ -35,6 +36,9 @@ public final class ObjectMapperFactory {
     }
 
     private static final class TrimStringSerializer extends StdScalarSerializer<Object> {
+
+        @Serial
+        private static final long serialVersionUID = 1L;
 
         TrimStringSerializer() {
             super(String.class, false);

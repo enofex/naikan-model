@@ -6,9 +6,13 @@ import io.naikan.model.Contact;
 import io.naikan.model.Contacts;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.util.List;
 
 final class ContactsDeserializer extends AbstractDeserializer<Contacts> {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     static final ContactsDeserializer INSTANCE = new ContactsDeserializer();
 

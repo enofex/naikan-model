@@ -1,14 +1,19 @@
 package io.naikan.model.module;
 
+import java.io.IOException;
+import java.io.Serial;
+import java.util.List;
+
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
+
 import io.naikan.model.Deployment;
 import io.naikan.model.Deployments;
 
-import java.io.IOException;
-import java.util.List;
-
 final class DeploymentsDeserializer extends AbstractDeserializer<Deployments> {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     static final DeploymentsDeserializer INSTANCE = new DeploymentsDeserializer();
 

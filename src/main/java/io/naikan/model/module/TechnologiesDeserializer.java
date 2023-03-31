@@ -6,9 +6,13 @@ import io.naikan.model.Technologies;
 import io.naikan.model.Technology;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.util.List;
 
 final class TechnologiesDeserializer extends AbstractDeserializer<Technologies> {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     static final TechnologiesDeserializer INSTANCE = new TechnologiesDeserializer();
 
