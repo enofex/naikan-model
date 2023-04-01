@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 class AbstractContainerTest {
 
     @Test
-    void testAll() {
+    void shouldReturnAll() {
         List<Integer> entries = List.of(1, 2, 3);
         AbstractContainer<Integer> container = new ConcreteContainer<>(entries);
 
@@ -18,7 +18,7 @@ class AbstractContainerTest {
     }
 
     @Test
-    void testLastIndex() {
+    void shouldReturnLastIndex() {
         List<Integer> entries = List.of(1, 2, 3);
         AbstractContainer<Integer> container = new ConcreteContainer<>(entries);
 
@@ -26,7 +26,7 @@ class AbstractContainerTest {
     }
 
     @Test
-    void testEquals() {
+    void shouldHandleEquals() {
         List<Integer> entries = List.of(1, 2, 3);
         AbstractContainer<Integer> container1 = new ConcreteContainer<>(entries);
         AbstractContainer<Integer> container2 = new ConcreteContainer<>(List.of(1, 2, 3));
@@ -37,7 +37,7 @@ class AbstractContainerTest {
     }
 
     @Test
-    void testHashCode() {
+    void shouldHandleHashCode() {
         List<Integer> entries = List.of(1, 2, 3);
         AbstractContainer<Integer> container1 = new ConcreteContainer<>(entries);
         AbstractContainer<Integer> container2 = new ConcreteContainer<>(List.of(1, 2, 3));
@@ -46,7 +46,7 @@ class AbstractContainerTest {
     }
 
     @Test
-    void testToString() {
+    void shouldHandleToString() {
         List<Integer> entries = List.of(1, 2, 3);
         AbstractContainer<Integer> container = new ConcreteContainer<>(entries);
 
