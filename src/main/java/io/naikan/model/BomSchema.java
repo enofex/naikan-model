@@ -42,7 +42,7 @@ public abstract class BomSchema {
                 "https://naikan.io/schema/bom-1.0.schema.json",
                 getClass()
                         .getClassLoader()
-                        .getResource("bom-1.0.schema.json")
+                        .getResource(schemaFile(schemaVersion))
                         .toExternalForm());
         config.setUriMappings(offlineMappings);
         JsonNode schemaNode = mapper.readTree(jsonSchemaAsStream(schemaVersion));
@@ -52,6 +52,14 @@ public abstract class BomSchema {
     }
 
     private InputStream jsonSchemaAsStream(BomSchema.Version schemaVersion) {
-        return this.getClass().getClassLoader().getResourceAsStream("bom-1.0.schema.json");
+        return this.getClass().getClassLoader().getResourceAsStream(schemaFile(schemaVersion));
+    }
+
+    private String schemaFile(BomSchema.Version schemaVersion) {
+        if (Version.VERSION_10 == schemaVersion) {
+            return "bom-1.0.schema.json";
+        }
+
+        return null;
     }
 }

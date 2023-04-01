@@ -1,19 +1,22 @@
 package io.nakain.model.deserializer.json;
 
-import io.naikan.model.Bom;
-import io.naikan.model.deserializer.DeserializerException;
-import io.naikan.model.deserializer.DeserializerFactory;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+import io.naikan.model.Bom;
+import io.naikan.model.deserializer.DeserializerException;
+import io.naikan.test.model.Boms;
 
 class JsonDeserializerTest {
 
     @Test
     void shouldDeserializeValidModel() throws DeserializerException {
-        Bom bom = DeserializerFactory.newJsonDeserializer().of(this.getClass().getResourceAsStream("/1.0/valid-0-bom-1.0.json"));
+        Bom bom = Boms.validBom0();
 
         assertAll(
                 () -> assertNull(bom.id()),
@@ -21,7 +24,7 @@ class JsonDeserializerTest {
                 () -> assertEquals("1.0", bom.specVersion()),
                 () -> assertEquals(LocalDateTime.parse("2022-12-29T08:29:10.079226"), bom.timestamp()),
 
-                () -> assertEquals("Naikan", bom.project().name()),
+                () -> assertEquals("Naikan I", bom.project().name()),
                 () -> assertEquals("io.naikan", bom.project().groupId()),
                 () -> assertEquals("naikan-core", bom.project().artifactId()),
                 () -> assertEquals("1.0.0", bom.project().version()),
