@@ -1,5 +1,6 @@
 package io.nakain.model.serializer.json;
 
+import static io.naikan.test.model.Boms.validBom0asInputStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -14,12 +15,12 @@ import org.junit.jupiter.api.Test;
 
 import io.naikan.model.Bom;
 import io.naikan.model.BomSchema;
+import io.naikan.model.deserializer.DeserializerFactory;
 import io.naikan.model.deserializer.json.DefaultJsonDeserializer;
 import io.naikan.model.serializer.SerializerFactory;
 import io.naikan.model.serializer.json.JsonSerializer;
 import io.naikan.model.serializer.json.JsonSerializer10;
 import io.naikan.model.validator.DefaultValidator;
-import io.naikan.test.model.Boms;
 
 class JsonSerializerTest {
 
@@ -39,7 +40,7 @@ class JsonSerializerTest {
 
     @Test
     void schema10ShouldBeValid() {
-        Bom bom = Boms.validBom0();
+        Bom bom = DeserializerFactory.newJsonDeserializer().of(validBom0asInputStream());
 
         JsonSerializer serializer = (JsonSerializer) SerializerFactory.newJsonSerializer(BomSchema.Version.VERSION_10);
         assertTrue(serializer instanceof JsonSerializer10);
@@ -50,8 +51,8 @@ class JsonSerializerTest {
     }
 
     @Test
-    void json10ShouldBeSame() throws Exception {
-        Bom originalBom = Boms.validBom0();
+    void json10ShouldBeSame() {
+        Bom originalBom = DeserializerFactory.newJsonDeserializer().of(validBom0asInputStream());
 
         JsonSerializer generator = (JsonSerializer) SerializerFactory.newJsonSerializer(BomSchema.Version.VERSION_10);
         File file = generator.toFile(originalBom, this.tempFile.getAbsolutePath());

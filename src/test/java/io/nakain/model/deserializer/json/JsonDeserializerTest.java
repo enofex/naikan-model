@@ -1,5 +1,6 @@
 package io.nakain.model.deserializer.json;
 
+import static io.naikan.test.model.Boms.validBom0asInputStream;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -10,13 +11,13 @@ import org.junit.jupiter.api.Test;
 
 import io.naikan.model.Bom;
 import io.naikan.model.deserializer.DeserializerException;
-import io.naikan.test.model.Boms;
+import io.naikan.model.deserializer.DeserializerFactory;
 
 class JsonDeserializerTest {
 
     @Test
     void shouldDeserializeValidModel() throws DeserializerException {
-        Bom bom = Boms.validBom0();
+        Bom bom = DeserializerFactory.newJsonDeserializer().of(validBom0asInputStream());
 
         assertAll(
                 () -> assertNull(bom.id()),
