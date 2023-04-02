@@ -10,7 +10,7 @@ import io.naikan.test.architecture.ArchUnitTestsConfig;
 class ArchitectureTest {
 
     @TestFactory
-    Collection<DynamicTest> testArchitecture() {
+    Collection<DynamicTest> shouldFulfilArchitectureConstrains() {
         return ArchUnitTestsConfig.defaultConfig().getDynamicTests();
     }
 }
