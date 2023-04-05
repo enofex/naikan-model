@@ -26,10 +26,12 @@ class JsonDeserializerTest {
                 () -> assertEquals(LocalDateTime.parse("2022-12-29T08:29:10.079226"), bom.timestamp()),
 
                 () -> assertEquals("Naikan I", bom.project().name()),
+                () -> assertEquals("https://github.com/naikan-projects", bom.project().repository()),
                 () -> assertEquals("io.naikan", bom.project().groupId()),
                 () -> assertEquals("naikan-core", bom.project().artifactId()),
                 () -> assertEquals("1.0.0", bom.project().version()),
                 () -> assertEquals("Naikan core module", bom.project().description()),
+                () -> assertEquals("Naikan notes", bom.project().notes()),
 
                 () -> assertEquals("Naikan", bom.organization().name()),
                 () -> assertEquals("https://naikan.io", bom.organization().url()),
@@ -56,10 +58,11 @@ class JsonDeserializerTest {
 
                 () -> assertEquals(1, bom.contacts().all().size()),
                 () -> assertEquals("John Doe", bom.contacts().all().get(0).name()),
-                () -> assertEquals("PO", bom.contacts().all().get(0).title()),
+                () -> assertEquals("Product Owner", bom.contacts().all().get(0).title()),
                 () -> assertEquals("jdoe@example.com", bom.contacts().all().get(0).email()),
                 () -> assertEquals("461-355-2912", bom.contacts().all().get(0).phone()),
                 () -> assertEquals("Responsible for this project", bom.contacts().all().get(0).description()),
+                () -> assertEquals("PO", bom.contacts().all().get(0).roles().all().get(0)),
 
                 () -> assertEquals(2, bom.technologies().all().size()),
                 () -> assertEquals("Java", bom.technologies().all().get(0).name()),

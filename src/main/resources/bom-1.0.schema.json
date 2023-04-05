@@ -21,6 +21,9 @@
         "name": {
           "type": "string"
         },
+        "repository": {
+          "type": "string"
+        },
         "groupId": {
           "type": "string"
         },
@@ -31,6 +34,9 @@
           "type": "string"
         },
         "description": {
+          "type": "string"
+        },
+        "notes": {
           "type": "string"
         }
       },
@@ -139,6 +145,17 @@
             },
             "description": {
               "type": "string"
+            },
+            "roles": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
             }
           }
         }

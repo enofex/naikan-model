@@ -1,6 +1,6 @@
 package io.naikan.model;
 
-public record Contact(String name, String title, String email, String phone, String description) {
+public record Contact(String name, String title, String email, String phone, String description, Roles roles) {
 
     public static Builder builder() {
         return new Builder();
@@ -12,6 +12,7 @@ public record Contact(String name, String title, String email, String phone, Str
         private String email;
         private String phone;
         private String description;
+        private Roles roles;
 
         private Builder() {
         }
@@ -41,8 +42,13 @@ public record Contact(String name, String title, String email, String phone, Str
             return this;
         }
 
+        public Builder roles(Roles roles) {
+            this.roles = roles;
+            return this;
+        }
+
         public Contact build() {
-            return new Contact(this.name, this.title, this.email, this.phone, this.description);
+            return new Contact(this.name, this.title, this.email, this.phone, this.description, this.roles);
         }
     }
 }
