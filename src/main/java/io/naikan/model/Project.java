@@ -1,6 +1,7 @@
 package io.naikan.model;
 
-public record Project(String name, String repository, String groupId, String artifactId, String version, String description, String notes) {
+public record Project(String name, String repository, String packaging, String groupId, String artifactId, String version,
+                      String description, String notes) {
 
     public static Builder builder() {
         return new Builder();
@@ -9,6 +10,7 @@ public record Project(String name, String repository, String groupId, String art
     public static final class Builder {
         private String name;
         private String repository;
+        private String packaging;
         private String groupId;
         private String artifactId;
         private String version;
@@ -25,6 +27,11 @@ public record Project(String name, String repository, String groupId, String art
 
         public Builder repository(String repository) {
             this.repository = repository;
+            return this;
+        }
+
+        public Builder packaging(String packaging) {
+            this.packaging = packaging;
             return this;
         }
 
@@ -54,7 +61,8 @@ public record Project(String name, String repository, String groupId, String art
         }
 
         public Project build() {
-            return new Project(this.name, this.repository, this.groupId, this.artifactId, this.version, this.description, this.notes);
+            return new Project(this.name, this.repository, this.packaging, this.groupId, this.artifactId, this.version, this.description,
+                    this.notes);
         }
     }
 }

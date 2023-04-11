@@ -24,6 +24,9 @@
         "repository": {
           "type": "string"
         },
+        "packaging": {
+          "type": "string"
+        },
         "groupId": {
           "type": "string"
         },

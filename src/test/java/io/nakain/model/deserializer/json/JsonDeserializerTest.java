@@ -27,6 +27,7 @@ class JsonDeserializerTest {
 
                 () -> assertEquals("Naikan I", bom.project().name()),
                 () -> assertEquals("https://github.com/naikan-projects", bom.project().repository()),
+                () -> assertEquals("jar", bom.project().packaging()),
                 () -> assertEquals("io.naikan", bom.project().groupId()),
                 () -> assertEquals("naikan-core", bom.project().artifactId()),
                 () -> assertEquals("1.0.0", bom.project().version()),
