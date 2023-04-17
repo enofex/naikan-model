@@ -3,7 +3,7 @@ package io.naikan.model;
 import java.time.LocalDateTime;
 
 public record Bom(String id, String bomFormat, String specVersion, LocalDateTime timestamp, Project project,
-                  Organization organization, Teams teams, Developers developers, Contacts contacts,
+                  Organization organization, Environments environments, Teams teams, Developers developers, Contacts contacts,
                   Technologies technologies, Licenses licenses, Documentations documentations,
                   Integrations integrations, Tags tags, Deployments deployments) {
 
@@ -12,6 +12,7 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
     public Bom {
         bomFormat = bomFormat != null ? bomFormat : BOM_FORMAT;
         specVersion = specVersion != null ? specVersion : BomSchema.VERSION_LATEST.version();
+        environments = environments != null ? environments : environments.empty();
         teams = teams != null ? teams : Teams.empty();
         developers = developers != null ? developers : Developers.empty();
         contacts = contacts != null ? contacts : Contacts.empty();
@@ -39,6 +40,7 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
         private LocalDateTime timestamp;
         private Project project;
         private Organization organization;
+        private Environments environments;
         private Teams teams;
         private Developers developers;
         private Contacts contacts;
@@ -100,6 +102,11 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
             return this;
         }
 
+        public Builder environments(Environments environments) {
+            this.environments = environments;
+            return this;
+        }
+
         public Builder teams(Teams teams) {
             this.teams = teams;
             return this;
@@ -146,9 +153,9 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
         }
 
         public Bom build() {
-            return new Bom(this.id, this.bomFormat, this.specVersion, this.timestamp, this.project, this.organization, this.teams,
-                    this.developers, this.contacts, this.technologies, this.licenses, this.documentations, this.integrations, this.tags,
-                    this.deployments);
+            return new Bom(this.id, this.bomFormat, this.specVersion, this.timestamp, this.project, this.organization, this.environments,
+                    this.teams, this.developers, this.contacts, this.technologies, this.licenses, this.documentations, this.integrations,
+                    this.tags, this.deployments);
         }
     }
 

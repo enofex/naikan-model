@@ -40,6 +40,17 @@ class JsonDeserializerTest {
                 () -> assertEquals("Software department", bom.organization().department()),
                 () -> assertEquals("Company projects at a glance", bom.organization().description()),
 
+                () -> assertEquals(2, bom.environments().all().size()),
+                () -> assertEquals("Staging", bom.environments().all().get(0).name()),
+                () -> assertEquals("Staging description", bom.environments().all().get(0).description()),
+                () -> assertEquals("staging.naikan.io", bom.environments().all().get(0).location()),
+                () -> assertEquals(1, bom.environments().all().get(0).tags().all().size()),
+                () -> assertEquals("Staging", bom.environments().all().get(0).tags().all().get(0)),
+                () -> assertEquals("Production", bom.environments().all().get(1).name()),
+                () -> assertEquals("Production description", bom.environments().all().get(1).description()),
+                () -> assertEquals("naikan.io", bom.environments().all().get(1).location()),
+                () -> assertEquals(0, bom.environments().all().get(1).tags().all().size()),
+
                 () -> assertEquals(1, bom.teams().all().size()),
                 () -> assertEquals("Naikan Team", bom.teams().all().get(0).name()),
                 () -> assertEquals("Naikan Core Team", bom.teams().all().get(0).description()),

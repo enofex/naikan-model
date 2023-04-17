@@ -1,11 +1,15 @@
 package io.naikan.model.module;
 
+import java.io.Serial;
+
 import com.fasterxml.jackson.databind.module.SimpleModule;
+
 import io.naikan.model.AbstractContainer;
 import io.naikan.model.Contacts;
 import io.naikan.model.Deployments;
 import io.naikan.model.Developers;
 import io.naikan.model.Documentations;
+import io.naikan.model.Environments;
 import io.naikan.model.Integrations;
 import io.naikan.model.Licenses;
 import io.naikan.model.Roles;
@@ -13,14 +17,13 @@ import io.naikan.model.Tags;
 import io.naikan.model.Teams;
 import io.naikan.model.Technologies;
 
-import java.io.Serial;
-
 public final class NaikanModule extends SimpleModule {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     public NaikanModule() {
+        addDeserializer(Environments.class, EnvironmentsDeserializer.INSTANCE);
         addDeserializer(Contacts.class, ContactsDeserializer.INSTANCE);
         addDeserializer(Deployments.class, DeploymentsDeserializer.INSTANCE);
         addDeserializer(Documentations.class, DocumentationsDeserializer.INSTANCE);
