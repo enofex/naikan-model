@@ -156,9 +156,8 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
 
     public Bom build() {
       return new Bom(this.id, this.bomFormat, this.specVersion, this.timestamp, this.project,
-          this.organization, this.environments,
-          this.teams, this.developers, this.contacts, this.technologies, this.licenses,
-          this.documentations, this.integrations,
+          this.organization, this.environments, this.teams, this.developers, this.contacts,
+          this.technologies, this.licenses, this.documentations, this.integrations,
           this.tags, this.deployments);
     }
   }

@@ -1,8 +1,7 @@
 package io.naikan.model;
 
 public record Project(String name, String url, String repository, String packaging, String groupId,
-                      String artifactId, String version,
-                      String description, String notes) {
+                      String artifactId, String version, String description, String notes) {
 
   public static Builder builder() {
     return new Builder();
@@ -70,9 +69,7 @@ public record Project(String name, String url, String repository, String packagi
 
     public Project build() {
       return new Project(this.name, this.url, this.repository, this.packaging, this.groupId,
-          this.artifactId, this.version,
-          this.description,
-          this.notes);
+          this.artifactId, this.version, this.description, this.notes);
     }
   }
 }

@@ -51,8 +51,8 @@ class JsonSerializerTest {
   void json10ShouldBeSame() {
     Bom originalBom = DeserializerFactory.newJsonDeserializer().of(validBom0asInputStream());
 
-    JsonSerializer generator = (JsonSerializer) SerializerFactory.newJsonSerializer(
-        BomSchema.Version.VERSION_10);
+    JsonSerializer generator = (JsonSerializer) SerializerFactory
+        .newJsonSerializer(BomSchema.Version.VERSION_10);
     File file = generator.toFile(originalBom, this.tempFile.getAbsolutePath());
     Bom generatedBom = new DefaultJsonDeserializer().of(file);
 

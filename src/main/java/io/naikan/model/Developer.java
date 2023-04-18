@@ -1,8 +1,8 @@
 package io.naikan.model;
 
 public record Developer(String name, String title, String department, String email, String phone,
-                        String organization,
-                        String organizationUrl, String timezone, String description, Roles roles) {
+                        String organization, String organizationUrl, String timezone,
+                        String description, Roles roles) {
 
   public Developer {
     roles = roles != null ? roles : Roles.empty();
