@@ -1,4 +1,4 @@
-package io.nakain.model.deserializer.json;
+package io.naikan.model.deserializer.json;
 
 import static io.naikan.test.model.Boms.validBom0asInputStream;
 import static org.junit.jupiter.api.Assertions.assertAll;

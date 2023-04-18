@@ -1,4 +1,4 @@
-package io.nakain.model.deserializer;
+package io.naikan.model.deserializer;
 
 
 import io.naikan.model.deserializer.Deserializer;

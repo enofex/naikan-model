@@ -1,4 +1,4 @@
-package io.nakain.model.validator;
+package io.naikan.model.validator;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

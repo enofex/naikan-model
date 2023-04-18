@@ -1,4 +1,4 @@
-package io.nakain.model.serializer;
+package io.naikan.model.serializer;
 
 
 import io.naikan.model.BomSchema;
