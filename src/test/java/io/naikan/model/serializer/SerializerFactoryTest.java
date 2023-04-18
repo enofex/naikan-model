@@ -11,10 +11,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SerializerFactoryTest {
 
-    @Test
-    void shouldReturnJsonSerializer() {
-        Serializer serializer = SerializerFactory.newJsonSerializer(BomSchema.Version.VERSION_10);
+  @Test
+  void shouldReturnJsonSerializer() {
+    Serializer serializer = SerializerFactory.newJsonSerializer(BomSchema.Version.VERSION_10);
 
-        assertTrue(serializer instanceof JsonSerializer);
-    }
+    assertTrue(serializer instanceof JsonSerializer);
+  }
 }

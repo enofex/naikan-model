@@ -6,13 +6,13 @@ import io.naikan.model.module.ObjectMapperFactory;
 
 abstract class AbstractJsonDeserializer implements JsonDeserializer {
 
-    private final ObjectMapper mapper;
+  private final ObjectMapper mapper;
 
-    AbstractJsonDeserializer() {
-        this.mapper = ObjectMapperFactory.newObjectMapper();
-    }
+  AbstractJsonDeserializer() {
+    this.mapper = ObjectMapperFactory.newObjectMapper();
+  }
 
-    ObjectMapper mapper() {
-        return this.mapper;
-    }
+  ObjectMapper mapper() {
+    return this.mapper;
+  }
 }

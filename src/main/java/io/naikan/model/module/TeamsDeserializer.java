@@ -11,19 +11,19 @@ import java.util.List;
 
 final class TeamsDeserializer extends AbstractDeserializer<Teams> {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+  @Serial
+  private static final long serialVersionUID = 1L;
 
-    static final TeamsDeserializer INSTANCE = new TeamsDeserializer();
+  static final TeamsDeserializer INSTANCE = new TeamsDeserializer();
 
-    TeamsDeserializer() {
-        super(Teams.class, Teams.empty());
-    }
+  TeamsDeserializer() {
+    super(Teams.class, Teams.empty());
+  }
 
-    @Override
-    public Teams deserialize(JsonParser jsonParser, DeserializationContext ctx) throws IOException {
-        Team[] teams = jsonParser.readValueAs(Team[].class);
+  @Override
+  public Teams deserialize(JsonParser jsonParser, DeserializationContext ctx) throws IOException {
+    Team[] teams = jsonParser.readValueAs(Team[].class);
 
-        return new Teams(List.of(teams));
-    }
+    return new Teams(List.of(teams));
+  }
 }

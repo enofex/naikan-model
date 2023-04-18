@@ -19,22 +19,22 @@ import io.naikan.model.Technologies;
 
 public final class NaikanModule extends SimpleModule {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+  @Serial
+  private static final long serialVersionUID = 1L;
 
-    public NaikanModule() {
-        addDeserializer(Environments.class, EnvironmentsDeserializer.INSTANCE);
-        addDeserializer(Contacts.class, ContactsDeserializer.INSTANCE);
-        addDeserializer(Deployments.class, DeploymentsDeserializer.INSTANCE);
-        addDeserializer(Documentations.class, DocumentationsDeserializer.INSTANCE);
-        addDeserializer(Licenses.class, LicensesDeserializer.INSTANCE);
-        addDeserializer(Integrations.class, IntegrationsDeserializer.INSTANCE);
-        addDeserializer(Tags.class, TagsDeserializer.INSTANCE);
-        addDeserializer(Teams.class, TeamsDeserializer.INSTANCE);
-        addDeserializer(Technologies.class, TechnologiesDeserializer.INSTANCE);
-        addDeserializer(Developers.class, DevelopersDeserializer.INSTANCE);
-        addDeserializer(Roles.class, RolesDeserializer.INSTANCE);
+  public NaikanModule() {
+    addDeserializer(Environments.class, EnvironmentsDeserializer.INSTANCE);
+    addDeserializer(Contacts.class, ContactsDeserializer.INSTANCE);
+    addDeserializer(Deployments.class, DeploymentsDeserializer.INSTANCE);
+    addDeserializer(Documentations.class, DocumentationsDeserializer.INSTANCE);
+    addDeserializer(Licenses.class, LicensesDeserializer.INSTANCE);
+    addDeserializer(Integrations.class, IntegrationsDeserializer.INSTANCE);
+    addDeserializer(Tags.class, TagsDeserializer.INSTANCE);
+    addDeserializer(Teams.class, TeamsDeserializer.INSTANCE);
+    addDeserializer(Technologies.class, TechnologiesDeserializer.INSTANCE);
+    addDeserializer(Developers.class, DevelopersDeserializer.INSTANCE);
+    addDeserializer(Roles.class, RolesDeserializer.INSTANCE);
 
-        addSerializer(AbstractContainer.class, AbstractContainerSerializer.INSTANCE);
-    }
+    addSerializer(AbstractContainer.class, AbstractContainerSerializer.INSTANCE);
+  }
 }

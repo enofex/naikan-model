@@ -11,19 +11,20 @@ import java.util.List;
 
 final class DevelopersDeserializer extends AbstractDeserializer<Developers> {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+  @Serial
+  private static final long serialVersionUID = 1L;
 
-    static final DevelopersDeserializer INSTANCE = new DevelopersDeserializer();
+  static final DevelopersDeserializer INSTANCE = new DevelopersDeserializer();
 
-    DevelopersDeserializer() {
-        super(Developers.class, Developers.empty());
-    }
+  DevelopersDeserializer() {
+    super(Developers.class, Developers.empty());
+  }
 
-    @Override
-    public Developers deserialize(JsonParser jsonParser, DeserializationContext ctx) throws IOException {
-        Developer[] developers = jsonParser.readValueAs(Developer[].class);
+  @Override
+  public Developers deserialize(JsonParser jsonParser, DeserializationContext ctx)
+      throws IOException {
+    Developer[] developers = jsonParser.readValueAs(Developer[].class);
 
-        return new Developers(List.of(developers));
-    }
+    return new Developers(List.of(developers));
+  }
 }

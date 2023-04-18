@@ -7,11 +7,11 @@ import io.naikan.model.BomSchema;
 
 public interface Serializer {
 
-    BomSchema.Version getSchemaVersion();
+  BomSchema.Version getSchemaVersion();
 
-    File toFile(Bom bom, String fileName);
+  File toFile(Bom bom, String fileName);
 
-    String toString(Bom bom);
+  String toString(Bom bom);
 
-    boolean supports(String type);
+  boolean supports(String type);
 }

@@ -11,19 +11,20 @@ import java.util.List;
 
 final class DocumentationsDeserializer extends AbstractDeserializer<Documentations> {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+  @Serial
+  private static final long serialVersionUID = 1L;
 
-    static final DocumentationsDeserializer INSTANCE = new DocumentationsDeserializer();
+  static final DocumentationsDeserializer INSTANCE = new DocumentationsDeserializer();
 
-    DocumentationsDeserializer() {
-        super(Documentations.class, Documentations.empty());
-    }
+  DocumentationsDeserializer() {
+    super(Documentations.class, Documentations.empty());
+  }
 
-    @Override
-    public Documentations deserialize(JsonParser jsonParser, DeserializationContext ctx) throws IOException {
-        Documentation[] documentations = jsonParser.readValueAs(Documentation[].class);
+  @Override
+  public Documentations deserialize(JsonParser jsonParser, DeserializationContext ctx)
+      throws IOException {
+    Documentation[] documentations = jsonParser.readValueAs(Documentation[].class);
 
-        return new Documentations(List.of(documentations));
-    }
+    return new Documentations(List.of(documentations));
+  }
 }

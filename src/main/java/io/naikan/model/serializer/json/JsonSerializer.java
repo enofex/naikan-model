@@ -7,12 +7,12 @@ import io.naikan.model.serializer.Serializer;
 
 public interface JsonSerializer extends Serializer {
 
-    JsonNode toJsonNode(Bom bom);
+  JsonNode toJsonNode(Bom bom);
 
-    String toJsonString(Bom bom);
+  String toJsonString(Bom bom);
 
-    @Override
-    default boolean supports(String type) {
-        return "json".equalsIgnoreCase(type);
-    }
+  @Override
+  default boolean supports(String type) {
+    return "json".equalsIgnoreCase(type);
+  }
 }

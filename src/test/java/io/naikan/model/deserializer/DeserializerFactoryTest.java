@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DeserializerFactoryTest {
 
-    @Test
-    void shouldReturnJsonDeserializer() {
-        Deserializer deserializer = DeserializerFactory.newJsonDeserializer();
+  @Test
+  void shouldReturnJsonDeserializer() {
+    Deserializer deserializer = DeserializerFactory.newJsonDeserializer();
 
-        assertTrue(deserializer instanceof DefaultJsonDeserializer);
-    }
+    assertTrue(deserializer instanceof DefaultJsonDeserializer);
+  }
 }

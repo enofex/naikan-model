@@ -8,13 +8,13 @@ import io.naikan.model.Bom;
 
 public interface Deserializer {
 
-    Bom of(File file) throws DeserializerException;
+  Bom of(File file) throws DeserializerException;
 
-    Bom of(byte[] bomBytes) throws DeserializerException;
+  Bom of(byte[] bomBytes) throws DeserializerException;
 
-    Bom of(Reader reader) throws DeserializerException;
+  Bom of(Reader reader) throws DeserializerException;
 
-    Bom of(InputStream inputStream) throws DeserializerException;
+  Bom of(InputStream inputStream) throws DeserializerException;
 
-    boolean supports(String type);
+  boolean supports(String type);
 }

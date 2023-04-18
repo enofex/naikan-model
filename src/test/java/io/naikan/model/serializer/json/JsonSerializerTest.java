@@ -24,41 +24,43 @@ import io.naikan.model.validator.DefaultValidator;
 
 class JsonSerializerTest {
 
-    private File tempFile;
+  private File tempFile;
 
-    @BeforeEach
-    void before() throws IOException {
-        Path path = Files.createTempDirectory("naikan-model");
-        this.tempFile = new File(path.toFile(), "bom.json");
-    }
+  @BeforeEach
+  void before() throws IOException {
+    Path path = Files.createTempDirectory("naikan-model");
+    this.tempFile = new File(path.toFile(), "bom.json");
+  }
 
-    @AfterEach
-    void after() {
-        this.tempFile.delete();
-        this.tempFile.getParentFile().delete();
-    }
+  @AfterEach
+  void after() {
+    this.tempFile.delete();
+    this.tempFile.getParentFile().delete();
+  }
 
-    @Test
-    void schema10ShouldBeValid() {
-        Bom bom = DeserializerFactory.newJsonDeserializer().of(validBom0asInputStream());
+  @Test
+  void schema10ShouldBeValid() {
+    Bom bom = DeserializerFactory.newJsonDeserializer().of(validBom0asInputStream());
 
-        JsonSerializer serializer = (JsonSerializer) SerializerFactory.newJsonSerializer(BomSchema.Version.VERSION_10);
-        assertTrue(serializer instanceof JsonSerializer10);
-        assertEquals(BomSchema.Version.VERSION_10, serializer.getSchemaVersion());
+    JsonSerializer serializer = (JsonSerializer) SerializerFactory.newJsonSerializer(
+        BomSchema.Version.VERSION_10);
+    assertTrue(serializer instanceof JsonSerializer10);
+    assertEquals(BomSchema.Version.VERSION_10, serializer.getSchemaVersion());
 
-        File file = serializer.toFile(bom, this.tempFile.getAbsolutePath());
-        assertTrue(new DefaultValidator().isValid(file, BomSchema.Version.VERSION_10));
-    }
+    File file = serializer.toFile(bom, this.tempFile.getAbsolutePath());
+    assertTrue(new DefaultValidator().isValid(file, BomSchema.Version.VERSION_10));
+  }
 
-    @Test
-    void json10ShouldBeSame() {
-        Bom originalBom = DeserializerFactory.newJsonDeserializer().of(validBom0asInputStream());
+  @Test
+  void json10ShouldBeSame() {
+    Bom originalBom = DeserializerFactory.newJsonDeserializer().of(validBom0asInputStream());
 
-        JsonSerializer generator = (JsonSerializer) SerializerFactory.newJsonSerializer(BomSchema.Version.VERSION_10);
-        File file = generator.toFile(originalBom, this.tempFile.getAbsolutePath());
-        Bom generatedBom = new DefaultJsonDeserializer().of(file);
+    JsonSerializer generator = (JsonSerializer) SerializerFactory.newJsonSerializer(
+        BomSchema.Version.VERSION_10);
+    File file = generator.toFile(originalBom, this.tempFile.getAbsolutePath());
+    Bom generatedBom = new DefaultJsonDeserializer().of(file);
 
-        assertEquals(originalBom, generatedBom);
-    }
+    assertEquals(originalBom, generatedBom);
+  }
 
 }

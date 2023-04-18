@@ -12,20 +12,21 @@ import io.naikan.model.Deployments;
 
 final class DeploymentsDeserializer extends AbstractDeserializer<Deployments> {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+  @Serial
+  private static final long serialVersionUID = 1L;
 
-    static final DeploymentsDeserializer INSTANCE = new DeploymentsDeserializer();
+  static final DeploymentsDeserializer INSTANCE = new DeploymentsDeserializer();
 
-    DeploymentsDeserializer() {
-        super(Deployments.class, Deployments.empty());
-    }
+  DeploymentsDeserializer() {
+    super(Deployments.class, Deployments.empty());
+  }
 
-    @Override
-    public Deployments deserialize(JsonParser jsonParser, DeserializationContext ctx) throws IOException {
-        Deployment[] deployments = jsonParser.readValueAs(Deployment[].class);
+  @Override
+  public Deployments deserialize(JsonParser jsonParser, DeserializationContext ctx)
+      throws IOException {
+    Deployment[] deployments = jsonParser.readValueAs(Deployment[].class);
 
-        return new Deployments(List.of(deployments));
-    }
+    return new Deployments(List.of(deployments));
+  }
 
 }

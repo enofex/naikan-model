@@ -12,19 +12,20 @@ import io.naikan.model.Environments;
 
 final class EnvironmentsDeserializer extends AbstractDeserializer<Environments> {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+  @Serial
+  private static final long serialVersionUID = 1L;
 
-    static final EnvironmentsDeserializer INSTANCE = new EnvironmentsDeserializer();
+  static final EnvironmentsDeserializer INSTANCE = new EnvironmentsDeserializer();
 
-    EnvironmentsDeserializer() {
-        super(Environments.class, Environments.empty());
-    }
+  EnvironmentsDeserializer() {
+    super(Environments.class, Environments.empty());
+  }
 
-    @Override
-    public Environments deserialize(JsonParser jsonParser, DeserializationContext ctx) throws IOException {
-        Environment[] environments = jsonParser.readValueAs(Environment[].class);
+  @Override
+  public Environments deserialize(JsonParser jsonParser, DeserializationContext ctx)
+      throws IOException {
+    Environment[] environments = jsonParser.readValueAs(Environment[].class);
 
-        return new Environments(List.of(environments));
-    }
+    return new Environments(List.of(environments));
+  }
 }
