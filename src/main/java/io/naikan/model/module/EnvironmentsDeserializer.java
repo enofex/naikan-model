@@ -1,14 +1,12 @@
 package io.naikan.model.module;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import io.naikan.model.Environment;
+import io.naikan.model.Environments;
 import java.io.IOException;
 import java.io.Serial;
 import java.util.List;
-
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationContext;
-
-import io.naikan.model.Environment;
-import io.naikan.model.Environments;
 
 final class EnvironmentsDeserializer extends AbstractDeserializer<Environments> {
 

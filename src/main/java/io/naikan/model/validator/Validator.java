@@ -2,7 +2,6 @@ package io.naikan.model.validator;
 
 import io.naikan.model.Bom;
 import io.naikan.model.BomSchema;
-
 import java.io.File;
 import java.io.InputStream;
 import java.io.Reader;

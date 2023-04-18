@@ -3,7 +3,6 @@ package io.naikan.model.module;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import io.naikan.model.Roles;
-
 import java.io.IOException;
 import java.io.Serial;
 import java.util.List;

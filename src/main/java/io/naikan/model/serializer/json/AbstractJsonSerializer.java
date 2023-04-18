@@ -8,7 +8,6 @@ import io.naikan.model.Bom;
 import io.naikan.model.BomSchema;
 import io.naikan.model.module.ObjectMapperFactory;
 import io.naikan.model.serializer.SerializerException;
-
 import java.lang.reflect.Field;
 
 abstract class AbstractJsonSerializer extends BomSchema implements JsonSerializer {

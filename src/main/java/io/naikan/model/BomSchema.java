@@ -1,15 +1,14 @@
 package io.naikan.model;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Map;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.networknt.schema.JsonSchema;
 import com.networknt.schema.JsonSchemaFactory;
 import com.networknt.schema.SchemaValidatorsConfig;
 import com.networknt.schema.SpecVersionDetector;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Map;
 
 public abstract class BomSchema {
 

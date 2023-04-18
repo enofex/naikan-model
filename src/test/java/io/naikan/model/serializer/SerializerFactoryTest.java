@@ -1,13 +1,11 @@
 package io.naikan.model.serializer;
 
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import io.naikan.model.BomSchema;
-import io.naikan.model.serializer.Serializer;
-import io.naikan.model.serializer.SerializerFactory;
 import io.naikan.model.serializer.json.JsonSerializer;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SerializerFactoryTest {
 

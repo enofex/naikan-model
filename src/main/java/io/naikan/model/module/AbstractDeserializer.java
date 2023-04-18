@@ -1,9 +1,8 @@
 package io.naikan.model.module;
 
-import java.io.Serial;
-
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import java.io.Serial;
 
 abstract class AbstractDeserializer<T> extends StdDeserializer<T> {
 

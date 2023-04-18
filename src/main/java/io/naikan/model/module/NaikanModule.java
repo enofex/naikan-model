@@ -1,9 +1,6 @@
 package io.naikan.model.module;
 
-import java.io.Serial;
-
 import com.fasterxml.jackson.databind.module.SimpleModule;
-
 import io.naikan.model.AbstractContainer;
 import io.naikan.model.Contacts;
 import io.naikan.model.Deployments;
@@ -16,6 +13,7 @@ import io.naikan.model.Roles;
 import io.naikan.model.Tags;
 import io.naikan.model.Teams;
 import io.naikan.model.Technologies;
+import java.io.Serial;
 
 public final class NaikanModule extends SimpleModule {
 

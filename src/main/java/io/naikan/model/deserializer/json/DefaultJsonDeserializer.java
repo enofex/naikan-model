@@ -1,12 +1,11 @@
 package io.naikan.model.deserializer.json;
 
+import io.naikan.model.Bom;
+import io.naikan.model.deserializer.DeserializerException;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
-
-import io.naikan.model.Bom;
-import io.naikan.model.deserializer.DeserializerException;
 
 public class DefaultJsonDeserializer extends AbstractJsonDeserializer {
 

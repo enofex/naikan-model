@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import io.naikan.model.Bom;
 import io.naikan.model.serializer.SerializerException;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

@@ -1,24 +1,21 @@
 package io.naikan.model.validator;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.naikan.model.Bom;
+import io.naikan.model.BomSchema;
+import io.naikan.model.module.ObjectMapperFactory;
+import io.naikan.model.serializer.SerializerFactory;
+import io.naikan.model.serializer.json.JsonSerializer;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import io.naikan.model.Bom;
-import io.naikan.model.BomSchema;
-import io.naikan.model.module.ObjectMapperFactory;
-import io.naikan.model.serializer.SerializerFactory;
-import io.naikan.model.serializer.json.JsonSerializer;
 
 public class DefaultValidator extends BomSchema implements Validator {
 

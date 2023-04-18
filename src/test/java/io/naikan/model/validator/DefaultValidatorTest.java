@@ -3,6 +3,8 @@ package io.naikan.model.validator;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import io.naikan.model.BomSchema;
+import io.naikan.test.model.Boms;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.FileSystem;
@@ -12,13 +14,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
-
-import io.naikan.model.BomSchema;
-import io.naikan.model.validator.DefaultValidator;
-import io.naikan.test.model.Boms;
 
 class DefaultValidatorTest {
 

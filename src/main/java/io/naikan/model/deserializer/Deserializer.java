@@ -1,10 +1,9 @@
 package io.naikan.model.deserializer;
 
+import io.naikan.model.Bom;
 import java.io.File;
 import java.io.InputStream;
 import java.io.Reader;
-
-import io.naikan.model.Bom;
 
 public interface Deserializer {
 

@@ -1,7 +1,6 @@
 package io.naikan.model.deserializer.json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import io.naikan.model.module.ObjectMapperFactory;
 
 abstract class AbstractJsonDeserializer implements JsonDeserializer {

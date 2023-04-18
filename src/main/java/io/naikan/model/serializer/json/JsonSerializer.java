@@ -1,7 +1,6 @@
 package io.naikan.model.serializer.json;
 
 import com.fasterxml.jackson.databind.JsonNode;
-
 import io.naikan.model.Bom;
 import io.naikan.model.serializer.Serializer;
 

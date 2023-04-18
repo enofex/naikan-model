@@ -1,8 +1,7 @@
 package io.naikan.model.serializer;
 
-import java.util.ServiceLoader;
-
 import io.naikan.model.BomSchema;
+import java.util.ServiceLoader;
 
 public final class SerializerFactory {
 

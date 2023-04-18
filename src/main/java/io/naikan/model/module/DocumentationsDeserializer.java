@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import io.naikan.model.Documentation;
 import io.naikan.model.Documentations;
-
 import java.io.IOException;
 import java.io.Serial;
 import java.util.List;

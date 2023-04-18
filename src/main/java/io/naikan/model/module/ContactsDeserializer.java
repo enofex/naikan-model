@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import io.naikan.model.Contact;
 import io.naikan.model.Contacts;
-
 import java.io.IOException;
 import java.io.Serial;
 import java.util.List;
