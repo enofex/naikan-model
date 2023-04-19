@@ -29,7 +29,7 @@
 
     <commons-io.version>2.11.0</commons-io.version>
     <jackson-datatype-jsr310.version>2.14.2</jackson-datatype-jsr310.version>
-    <json-schema-validator.version>1.0.79</json-schema-validator.version>
+    <json-schema-validator.version>1.0.80</json-schema-validator.version>
     <junit-jupiter.version>5.9.2</junit-jupiter.version>
     <archunit.version>1.0.1</archunit.version>
 
