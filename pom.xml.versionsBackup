@@ -7,7 +7,7 @@
 
   <groupId>com.enofex</groupId>
   <artifactId>naikan-model</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.2-SNAPSHOT</version>
   <name>Naikan Model</name>
   <inceptionYear>2023</inceptionYear>
 
