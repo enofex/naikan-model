@@ -25,7 +25,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <commons-io.version>2.11.0</commons-io.version>
-    <jackson-datatype-jsr310.version>2.14.2</jackson-datatype-jsr310.version>
+    <jackson-datatype-jsr310.version>2.15.0</jackson-datatype-jsr310.version>
     <json-schema-validator.version>1.0.80</json-schema-validator.version>
     <junit-jupiter.version>5.9.2</junit-jupiter.version>
     <archunit.version>1.0.1</archunit.version>
