@@ -37,7 +37,7 @@
     <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
     <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-    <jreleaser-maven-plugin.version>1.5.1</jreleaser-maven-plugin.version>
+    <jreleaser-maven-plugin.version>1.6.0</jreleaser-maven-plugin.version>
     <naikan-test.version>0.0.1</naikan-test.version>
   </properties>
 
