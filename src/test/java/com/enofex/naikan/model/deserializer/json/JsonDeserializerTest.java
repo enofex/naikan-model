@@ -56,6 +56,7 @@ class JsonDeserializerTest {
 
         () -> assertEquals(1, bom.developers().all().size()),
         () -> assertEquals("Trev Cooksey", bom.developers().all().get(0).name()),
+        () -> assertEquals("cytrev", bom.developers().all().get(0).username()),
         () -> assertEquals("Principal Software Engineer", bom.developers().all().get(0).title()),
         () -> assertEquals("Naikan Software Engineering",
             bom.developers().all().get(0).department()),

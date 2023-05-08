@@ -1,7 +1,7 @@
 package com.enofex.naikan.model;
 
-public record Developer(String name, String title, String department, String email, String phone,
-                        String organization, String organizationUrl, String timezone,
+public record Developer(String name, String username, String title, String department, String email,
+                        String phone, String organization, String organizationUrl, String timezone,
                         String description, Roles roles) {
 
   public Developer {
@@ -15,6 +15,7 @@ public record Developer(String name, String title, String department, String ema
   public static final class Builder {
 
     private String name;
+    private String username;
     private String department;
     private String title;
     private String email;
@@ -30,6 +31,11 @@ public record Developer(String name, String title, String department, String ema
 
     public Builder name(String name) {
       this.name = name;
+      return this;
+    }
+
+    public Builder username(String username) {
+      this.username = username;
       return this;
     }
 
@@ -79,8 +85,9 @@ public record Developer(String name, String title, String department, String ema
     }
 
     public Developer build() {
-      return new Developer(this.name, this.title, this.department, this.email, this.phone,
-          this.organization, this.organizationUrl, this.timezone, this.description, this.roles);
+      return new Developer(this.name, this.username, this.title, this.department, this.email,
+          this.phone, this.organization, this.organizationUrl, this.timezone, this.description,
+          this.roles);
     }
   }
 }

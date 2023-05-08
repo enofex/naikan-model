@@ -28,6 +28,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+    <naikan-test.version>0.0.2</naikan-test.version>
     <commons-io.version>2.11.0</commons-io.version>
     <jackson-datatype-jsr310.version>2.15.0</jackson-datatype-jsr310.version>
     <json-schema-validator.version>1.0.81</json-schema-validator.version>
@@ -41,7 +42,6 @@
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
     <maven-enforcer-plugin.version>3.3.0</maven-enforcer-plugin.version>
     <jreleaser-maven-plugin.version>1.6.0</jreleaser-maven-plugin.version>
-    <naikan-test.version>0.0.1</naikan-test.version>
   </properties>
 
   <dependencies>
@@ -147,7 +147,7 @@
                   <requireJavaVersion>
                     <version>20</version>
                   </requireJavaVersion>
-                </rules>    
+                </rules>
               </configuration>
             </execution>
             <execution>
