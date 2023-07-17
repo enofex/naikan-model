@@ -2,9 +2,9 @@
 
 # The naikan-model module
 
-This module provides the model representation of the naikan application data along with utilities to
-assist in creating,
-validating, and parsing the model.
+This module provides the model representation of the Naikan application data along with utilities to
+assist in creating, validating, and parsing the [Naikan](https://github.com/enofex/naikan) model:
+
 
 Maven Usage
 -------------------
