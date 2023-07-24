@@ -17,7 +17,7 @@
 
   <url>https://naikan.io</url>
   <description>
-    The naikan-model module provides the data model that represent their naikan application data.
+    The Naikan Model Module for Naikan the software inventory management tool for dev teams driven by our CI/CD pipeline.
   </description>
 
   <properties>
