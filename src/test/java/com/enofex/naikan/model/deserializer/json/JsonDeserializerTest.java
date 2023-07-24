@@ -104,8 +104,8 @@ class JsonDeserializerTest {
         () -> assertEquals(2, bom.documentations().all().get(0).tags().all().size()),
         () -> assertEquals("Architecture", bom.documentations().all().get(0).tags().all().get(0)),
         () -> assertEquals("ARC24", bom.documentations().all().get(0).tags().all().get(1)),
-        () -> assertEquals("Technical dept", bom.documentations().all().get(1).name()),
-        () -> assertEquals("wiki.naikan.io/techdept", bom.documentations().all().get(1).location()),
+        () -> assertEquals("Technical debt", bom.documentations().all().get(1).name()),
+        () -> assertEquals("wiki.naikan.io/techdebt", bom.documentations().all().get(1).location()),
         () -> assertEquals("Should be reduced!", bom.documentations().all().get(1).description()),
 
         () -> assertEquals(5, bom.integrations().all().size()),

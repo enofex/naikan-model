@@ -28,7 +28,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <naikan-test.version>0.0.2</naikan-test.version>
+    <naikan-test.version>0.0.4</naikan-test.version>
     <commons-io.version>2.13.0</commons-io.version>
     <jackson-datatype-jsr310.version>2.15.2</jackson-datatype-jsr310.version>
     <json-schema-validator.version>1.0.86</json-schema-validator.version>
@@ -60,7 +60,6 @@
       <artifactId>json-schema-validator</artifactId>
       <version>${json-schema-validator.version}</version>
     </dependency>
-
     <dependency>
       <groupId>com.enofex</groupId>
       <artifactId>naikan-test</artifactId>
