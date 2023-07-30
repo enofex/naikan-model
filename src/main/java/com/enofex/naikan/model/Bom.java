@@ -15,7 +15,7 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
     bomFormat = bomFormat != null ? bomFormat : BOM_FORMAT;
     specVersion = specVersion != null ? specVersion : BomSchema.VERSION_LATEST.version();
     timestamp = timestamp != null ? timestamp : LocalDateTime.now();
-    environments = environments != null ? environments : environments.empty();
+    environments = environments != null ? environments : Environments.empty();
     teams = teams != null ? teams : Teams.empty();
     developers = developers != null ? developers : Developers.empty();
     contacts = contacts != null ? contacts : Contacts.empty();
