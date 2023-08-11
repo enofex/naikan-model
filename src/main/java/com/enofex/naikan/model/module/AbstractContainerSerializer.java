@@ -33,4 +33,9 @@ class AbstractContainerSerializer extends StdSerializer<AbstractContainer> {
 
     gen.writeEndArray();
   }
+
+  @Override
+  public boolean isEmpty(SerializerProvider provider, AbstractContainer value) {
+    return value == null || value.all().isEmpty();
+  }
 }
