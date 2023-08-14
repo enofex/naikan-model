@@ -1,7 +1,8 @@
 package com.enofex.naikan.model;
 
-public record Project(String name, String url, String repository, String packaging, String groupId,
-                      String artifactId, String version, String description, String notes) {
+public record Project(String name, String inceptionYear, String url, String repository,
+                      String packaging, String groupId, String artifactId, String version,
+                      String description, String notes) {
 
   public static Builder builder() {
     return new Builder();
@@ -11,6 +12,7 @@ public record Project(String name, String url, String repository, String packagi
 
     private String name;
     private String url;
+    private String inceptionYear;
     private String repository;
     private String packaging;
     private String groupId;
@@ -29,6 +31,11 @@ public record Project(String name, String url, String repository, String packagi
 
     public Builder url(String url) {
       this.url = url;
+      return this;
+    }
+
+    public Builder inceptionYear(String inceptionYear) {
+      this.inceptionYear = inceptionYear;
       return this;
     }
 
@@ -68,8 +75,8 @@ public record Project(String name, String url, String repository, String packagi
     }
 
     public Project build() {
-      return new Project(this.name, this.url, this.repository, this.packaging, this.groupId,
-          this.artifactId, this.version, this.description, this.notes);
+      return new Project(this.name, this.url, this.inceptionYear, this.repository, this.packaging,
+          this.groupId, this.artifactId, this.version, this.description, this.notes);
     }
   }
 }
