@@ -25,6 +25,7 @@ class JsonDeserializerTest {
         () -> assertEquals(LocalDateTime.parse("2022-12-29T08:29:10.079226"), bom.timestamp()),
 
         () -> assertEquals("Naikan I", bom.project().name()),
+        () -> assertEquals("2003", bom.project().inceptionYear()),
         () -> assertEquals("https://naikan.io", bom.project().url()),
         () -> assertEquals("https://github.com/enofex/naikan-projects", bom.project().repository()),
         () -> assertEquals("jar", bom.project().packaging()),
