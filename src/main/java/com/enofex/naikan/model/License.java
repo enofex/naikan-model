@@ -9,7 +9,6 @@ public record License(String name, String url, String description) {
   public static final class Builder {
 
     private String name;
-
     private String url;
     private String description;
 
