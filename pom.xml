@@ -22,14 +22,14 @@
   </description>
 
   <properties>
-    <java.version>20</java.version>
+    <java.version>17</java.version>
 
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <naikan-test.version>0.0.6</naikan-test.version>
+    <naikan-test.version>0.0.7</naikan-test.version>
     <commons-io.version>2.13.0</commons-io.version>
     <jackson-datatype-jsr310.version>2.15.2</jackson-datatype-jsr310.version>
     <json-schema-validator.version>1.0.86</json-schema-validator.version>
@@ -145,7 +145,7 @@
               <configuration>
                 <rules>
                   <requireJavaVersion>
-                    <version>20</version>
+                    <version>17</version>
                   </requireJavaVersion>
                 </rules>
               </configuration>
