@@ -2,6 +2,7 @@ package com.enofex.naikan.model.module;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.SerializerProvider;
@@ -21,6 +22,7 @@ public final class ObjectMapperFactory {
     mapper.registerModule(new JavaTimeModule());
     mapper.registerModule(new NaikanModule());
     mapper.enable(JsonGenerator.Feature.IGNORE_UNKNOWN);
+    mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
     mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
     mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
     mapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
