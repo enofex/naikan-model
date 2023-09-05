@@ -27,6 +27,17 @@ public final class JsonSerializer10 extends AbstractJsonSerializer {
   }
 
   @Override
+  public File toFile(Bom bom, String fileName, boolean prettyPrint) {
+    try (FileWriter writer = new FileWriter(fileName)) {
+      writer.write(toJson(modifyBom(bom), prettyPrint));
+
+      return new File(fileName);
+    } catch (SerializerException | IOException e) {
+      return null;
+    }
+  }
+
+  @Override
   public JsonNode toJsonNode(Bom bom) {
     try {
       return mapper().readTree(toJson(modifyBom(bom), false));
