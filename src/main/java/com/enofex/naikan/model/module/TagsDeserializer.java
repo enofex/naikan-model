@@ -20,8 +20,8 @@ final class TagsDeserializer extends AbstractDeserializer<Tags> {
 
   @Override
   public Tags deserialize(JsonParser jsonParser, DeserializationContext ctx) throws IOException {
-    String[] teams = jsonParser.readValueAs(String[].class);
+    String[] tags = jsonParser.readValueAs(String[].class);
 
-    return new Tags(List.of(teams));
+    return new Tags(List.of(tags));
   }
 }
