@@ -14,4 +14,7 @@ public final class Documentations extends AbstractContainer<Documentation> {
     return NO_DOCUMENTATIONS;
   }
 
+  public static Documentations of(Documentation... documentations) {
+    return new Documentations(List.of(documentations));
+  }
 }

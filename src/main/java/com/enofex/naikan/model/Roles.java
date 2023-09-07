@@ -13,4 +13,8 @@ public final class Roles extends AbstractContainer<String> {
   public static Roles empty() {
     return NO_ROLES;
   }
+
+  public static Roles of(String... roles) {
+    return new Roles(List.of(roles));
+  }
 }

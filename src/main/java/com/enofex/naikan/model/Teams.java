@@ -13,4 +13,8 @@ public final class Teams extends AbstractContainer<Team> {
   public static Teams empty() {
     return NO_TEAMS;
   }
+
+  public static Teams of(Team... teams) {
+    return new Teams(List.of(teams));
+  }
 }

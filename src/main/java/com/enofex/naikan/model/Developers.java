@@ -13,4 +13,8 @@ public final class Developers extends AbstractContainer<Developer> {
   public static Developers empty() {
     return NO_DEVELOPERS;
   }
+
+  public static Developers of(Developer... developers) {
+    return new Developers(List.of(developers));
+  }
 }

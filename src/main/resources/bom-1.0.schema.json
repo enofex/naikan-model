@@ -70,33 +70,6 @@
         }
       }
     },
-    "integrations": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "location": {
-              "type": "string"
-            },
-            "description": {
-              "type": "string"
-            },
-            "tags": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string"
-                }
-              ]
-            }
-          }
-        }
-      ]
-    },
     "teams": {
       "type": "array",
       "items": [
@@ -326,6 +299,162 @@
           }
         }
       ]
+    },
+    "repository": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "firstCommit": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "string"
+            },
+            "shortMessage": {
+              "type": "string"
+            },
+            "author": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                }
+              }
+            },
+            "changes": {
+              "type": "object",
+              "properties": {
+                "lines": {
+                  "type": "object",
+                  "properties": {
+                    "added": {
+                      "type": "number"
+                    },
+                    "deleted": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "files": {
+                  "type": "object",
+                  "properties": {
+                    "added": {
+                      "type": "number"
+                    },
+                    "deleted": {
+                      "type": "number"
+                    },
+                    "changed": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "totalCommits": {
+          "type": "number"
+        },
+        "defaultBranch": {
+          "type": "string"
+        },
+        "branches": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "timestamp": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        },
+        "commits": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "timestamp": {
+                  "type": "string"
+                },
+                "shortMessage": {
+                  "type": "string"
+                },
+                "author": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "changes": {
+                  "type": "object",
+                  "properties": {
+                    "lines": {
+                      "type": "object",
+                      "properties": {
+                        "added": {
+                          "type": "number"
+                        },
+                        "deleted": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "files": {
+                      "type": "object",
+                      "properties": {
+                        "added": {
+                          "type": "number"
+                        },
+                        "deleted": {
+                          "type": "number"
+                        },
+                        "changed": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
     }
   },
   "required": [

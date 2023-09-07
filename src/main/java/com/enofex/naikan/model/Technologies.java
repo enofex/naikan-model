@@ -13,4 +13,8 @@ public final class Technologies extends AbstractContainer<Technology> {
   public static Technologies empty() {
     return NO_TECHNOLOGIES;
   }
+
+  public static Technologies of(Technology... technologies) {
+    return new Technologies(List.of(technologies));
+  }
 }

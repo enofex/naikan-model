@@ -1,6 +1,8 @@
 package com.enofex.naikan.model.module;
 
 import com.enofex.naikan.model.AbstractContainer;
+import com.enofex.naikan.model.Branches;
+import com.enofex.naikan.model.Commits;
 import com.enofex.naikan.model.Contacts;
 import com.enofex.naikan.model.Deployments;
 import com.enofex.naikan.model.Developers;
@@ -8,6 +10,7 @@ import com.enofex.naikan.model.Documentations;
 import com.enofex.naikan.model.Environments;
 import com.enofex.naikan.model.Integrations;
 import com.enofex.naikan.model.Licenses;
+import com.enofex.naikan.model.RepositoryTags;
 import com.enofex.naikan.model.Roles;
 import com.enofex.naikan.model.Tags;
 import com.enofex.naikan.model.Teams;
@@ -32,6 +35,9 @@ public final class NaikanModule extends SimpleModule {
     addDeserializer(Technologies.class, TechnologiesDeserializer.INSTANCE);
     addDeserializer(Developers.class, DevelopersDeserializer.INSTANCE);
     addDeserializer(Roles.class, RolesDeserializer.INSTANCE);
+    addDeserializer(Branches.class, BranchesDeserializer.INSTANCE);
+    addDeserializer(RepositoryTags.class, RepositoryTagsDeserializer.INSTANCE);
+    addDeserializer(Commits.class, CommitsDeserializer.INSTANCE);
 
     addSerializer(AbstractContainer.class, AbstractContainerSerializer.INSTANCE);
   }

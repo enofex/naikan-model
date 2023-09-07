@@ -13,4 +13,8 @@ public final class Tags extends AbstractContainer<String> {
   public static Tags empty() {
     return NO_TAGS;
   }
+
+  public static Tags of(String... tags) {
+    return new Tags(List.of(tags));
+  }
 }

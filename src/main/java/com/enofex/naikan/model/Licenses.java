@@ -13,4 +13,8 @@ public final class Licenses extends AbstractContainer<License> {
   public static Licenses empty() {
     return NO_LICENSES;
   }
+
+  public static Licenses of(License... licenses) {
+    return new Licenses(List.of(licenses));
+  }
 }

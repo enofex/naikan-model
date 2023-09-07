@@ -13,4 +13,8 @@ public final class Integrations extends AbstractContainer<Integration> {
   public static Integrations empty() {
     return NO_INTEGRATIONS;
   }
+
+  public static Integrations of(Integration... integrations) {
+    return new Integrations(List.of(integrations));
+  }
 }

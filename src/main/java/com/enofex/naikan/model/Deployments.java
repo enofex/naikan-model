@@ -16,4 +16,8 @@ public final class Deployments extends AbstractContainer<Deployment> {
   public static Deployments empty() {
     return NO_DEPLOYMENTS;
   }
+
+  public static Deployments of(Deployment... deployments) {
+    return new Deployments(List.of(deployments));
+  }
 }

@@ -18,9 +18,7 @@ class JsonDeserializerTest {
   void shouldDeserializeValidModel() throws DeserializerException {
     Bom bom = DeserializerFactory.newJsonDeserializer().of(validBom0asInputStream());
 
-    assertAll(
-        () -> assertNull(bom.id()),
-        () -> assertEquals("Naikan", bom.bomFormat()),
+    assertAll(() -> assertNull(bom.id()), () -> assertEquals("Naikan", bom.bomFormat()),
         () -> assertEquals("1.0", bom.specVersion()),
         () -> assertEquals(LocalDateTime.parse("2022-12-29T08:29:10.079226"), bom.timestamp()),
 
@@ -139,7 +137,35 @@ class JsonDeserializerTest {
         () -> assertEquals("staging.naikan.io", bom.deployments().all().get(0).location()),
         () -> assertEquals("1.0.0", bom.deployments().all().get(0).version()),
         () -> assertEquals(LocalDateTime.parse("2022-12-28T08:29:10.079226"),
-            bom.deployments().all().get(0).timestamp())
+            bom.deployments().all().get(0).timestamp()),
+
+        () -> assertEquals("naikan", bom.repository().name()),
+        () -> assertEquals("git@github.com:enofex/naikan.git", bom.repository().url()),
+        () -> assertEquals("4c2f7dbfab5aa133bab1ca8d0a09a49e3713e25a",
+            bom.repository().firstCommit().id()),
+        () -> assertEquals(LocalDateTime.parse("2023-07-13T17:41:08"),
+            bom.repository().firstCommit().timestamp()),
+        () -> assertEquals("Init commit",
+            bom.repository().firstCommit().shortMessage()),
+        () -> assertEquals("Trev Cooksey",
+            bom.repository().firstCommit().author().name()),
+        () -> assertEquals("tcooksey1@geocities.jp",
+            bom.repository().firstCommit().author().email()),
+        () -> assertEquals(46856,
+            bom.repository().firstCommit().changes().lines().added()),
+        () -> assertEquals(0,
+            bom.repository().firstCommit().changes().lines().deleted()),
+        () -> assertEquals(350,
+            bom.repository().firstCommit().changes().files().added()),
+        () -> assertEquals(0,
+            bom.repository().firstCommit().changes().files().deleted()),
+        () -> assertEquals(0,
+            bom.repository().firstCommit().changes().files().changed()),
+        () -> assertEquals(3, bom.repository().totalCommits()),
+        () -> assertEquals("main", bom.repository().defaultBranch()),
+        () -> assertEquals(3, bom.repository().tags().all().size()),
+        () -> assertEquals(3, bom.repository().branches().all().size()),
+        () -> assertEquals(3, bom.repository().commits().all().size())
     );
   }
 }

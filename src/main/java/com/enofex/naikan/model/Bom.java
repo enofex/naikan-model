@@ -7,7 +7,8 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
                   Organization organization, Environments environments, Teams teams,
                   Developers developers, Contacts contacts,
                   Technologies technologies, Licenses licenses, Documentations documentations,
-                  Integrations integrations, Tags tags, Deployments deployments) {
+                  Integrations integrations, Tags tags, Deployments deployments,
+                  Repository repository) {
 
   public static final String BOM_FORMAT = "Naikan";
 
@@ -53,6 +54,7 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
     private Integrations integrations;
     private Tags tags;
     private Deployments deployments;
+    private Repository repository;
 
     private Builder() {
     }
@@ -73,6 +75,7 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
       this.integrations = bom.integrations();
       this.tags = bom.tags();
       this.deployments = bom.deployments();
+      this.repository = bom.repository();
     }
 
     public Builder id(String id) {
@@ -155,11 +158,16 @@ public record Bom(String id, String bomFormat, String specVersion, LocalDateTime
       return this;
     }
 
+    public Builder repository(Repository repository) {
+      this.repository = repository;
+      return this;
+    }
+
     public Bom build() {
       return new Bom(this.id, this.bomFormat, this.specVersion, this.timestamp, this.project,
           this.organization, this.environments, this.teams, this.developers, this.contacts,
           this.technologies, this.licenses, this.documentations, this.integrations,
-          this.tags, this.deployments);
+          this.tags, this.deployments, this.repository);
     }
   }
 

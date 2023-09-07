@@ -13,4 +13,8 @@ public final class Contacts extends AbstractContainer<Contact> {
   public static Contacts empty() {
     return NO_CONTACTS;
   }
+
+  public static Contacts of(Contact... contacts) {
+    return new Contacts(List.of(contacts));
+  }
 }

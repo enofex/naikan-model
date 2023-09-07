@@ -13,4 +13,8 @@ public final class Environments extends AbstractContainer<Environment> {
   public static Environments empty() {
     return NO_ENVIRONMENTS;
   }
+
+  public static Environments of(Environment... environments) {
+    return new Environments(List.of(environments));
+  }
 }

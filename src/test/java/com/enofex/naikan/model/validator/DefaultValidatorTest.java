@@ -45,7 +45,7 @@ class DefaultValidatorTest {
       }
     }
 
-    assertTrue(dynamicTests.size() > 0);
+    assertFalse(dynamicTests.isEmpty());
 
     return dynamicTests;
   }
