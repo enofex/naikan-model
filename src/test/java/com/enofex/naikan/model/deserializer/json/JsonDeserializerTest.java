@@ -142,7 +142,7 @@ class JsonDeserializerTest {
         () -> assertEquals("naikan", bom.repository().name()),
         () -> assertEquals("git@github.com:enofex/naikan.git", bom.repository().url()),
         () -> assertEquals("4c2f7dbfab5aa133bab1ca8d0a09a49e3713e25a",
-            bom.repository().firstCommit().id()),
+            bom.repository().firstCommit().commitId()),
         () -> assertEquals(LocalDateTime.parse("2023-07-13T17:41:08"),
             bom.repository().firstCommit().timestamp()),
         () -> assertEquals("Init commit",

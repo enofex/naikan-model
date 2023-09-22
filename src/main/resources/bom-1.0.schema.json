@@ -312,7 +312,7 @@
         "firstCommit": {
           "type": "object",
           "properties": {
-            "id": {
+            "commitId": {
               "type": "string"
             },
             "timestamp": {
@@ -400,7 +400,7 @@
             {
               "type": "object",
               "properties": {
-                "id": {
+                "commitId": {
                   "type": "string"
                 },
                 "timestamp": {

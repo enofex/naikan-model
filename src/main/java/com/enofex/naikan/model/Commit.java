@@ -2,7 +2,8 @@ package com.enofex.naikan.model;
 
 import java.time.LocalDateTime;
 
-public record Commit(String id, LocalDateTime timestamp, String shortMessage, CommitAuthor author,
+public record Commit(String commitId, LocalDateTime timestamp, String shortMessage,
+                     CommitAuthor author,
                      CommitChanges changes) {
 
   public static Builder builder() {
@@ -11,7 +12,7 @@ public record Commit(String id, LocalDateTime timestamp, String shortMessage, Co
 
   public static final class Builder {
 
-    private String id;
+    private String commitId;
     private LocalDateTime timestamp;
     private String shortMessage;
     private CommitAuthor author;
@@ -20,8 +21,8 @@ public record Commit(String id, LocalDateTime timestamp, String shortMessage, Co
     private Builder() {
     }
 
-    public Builder id(String id) {
-      this.id = id;
+    public Builder commitId(String commitId) {
+      this.commitId = commitId;
       return this;
     }
 
@@ -46,7 +47,8 @@ public record Commit(String id, LocalDateTime timestamp, String shortMessage, Co
     }
 
     public Commit build() {
-      return new Commit(this.id, this.timestamp, this.shortMessage, this.author, this.changes);
+      return new Commit(this.commitId, this.timestamp, this.shortMessage, this.author,
+          this.changes);
     }
   }
 }
