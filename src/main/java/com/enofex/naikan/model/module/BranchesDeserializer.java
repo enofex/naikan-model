@@ -1,7 +1,7 @@
 package com.enofex.naikan.model.module;
 
+import com.enofex.naikan.model.Branch;
 import com.enofex.naikan.model.Branches;
-import com.enofex.naikan.model.Tags;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import java.io.IOException;
@@ -16,13 +16,13 @@ final class BranchesDeserializer extends AbstractDeserializer<Branches> {
   static final BranchesDeserializer INSTANCE = new BranchesDeserializer();
 
   BranchesDeserializer() {
-    super(Tags.class, Branches.empty());
+    super(Branches.class, Branches.empty());
   }
 
   @Override
   public Branches deserialize(JsonParser jsonParser, DeserializationContext ctx)
       throws IOException {
-    String[] branches = jsonParser.readValueAs(String[].class);
+    Branch[] branches = jsonParser.readValueAs(Branch[].class);
 
     return new Branches(List.of(branches));
   }
