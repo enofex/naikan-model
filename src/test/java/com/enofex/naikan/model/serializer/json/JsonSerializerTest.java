@@ -36,7 +36,7 @@ class JsonSerializerTest {
   }
 
   @Test
-  void schema10ShouldBeValid() {
+  void shouldBeValid() {
     Bom bom = DeserializerFactory.newJsonDeserializer().of(validBom0asInputStream());
 
     JsonSerializer serializer = (JsonSerializer) SerializerFactory.newJsonSerializer(
@@ -49,7 +49,7 @@ class JsonSerializerTest {
   }
 
   @Test
-  void json10ShouldBeSame() {
+  void shouldBeSame() {
     Bom originalBom = DeserializerFactory.newJsonDeserializer().of(validBom0asInputStream());
 
     JsonSerializer generator = (JsonSerializer) SerializerFactory
