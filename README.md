@@ -15,7 +15,7 @@ Maven Usage
 <dependency>
   <groupId>com.enofex</groupId>
   <artifactId>naikan-model</artifactId>
-  <version>0.2.1</version>
+  <version>0.2.3</version>
 </dependency>
 ```
 
