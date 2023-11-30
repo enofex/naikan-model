@@ -30,7 +30,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <naikan-test.version>0.0.15</naikan-test.version>
-    <commons-io.version>2.15.0</commons-io.version>
+    <commons-io.version>2.15.1</commons-io.version>
     <jackson-datatype-jsr310.version>2.16.0</jackson-datatype-jsr310.version>
     <json-schema-validator.version>1.0.87</json-schema-validator.version>
     <junit-jupiter.version>5.10.1</junit-jupiter.version>
