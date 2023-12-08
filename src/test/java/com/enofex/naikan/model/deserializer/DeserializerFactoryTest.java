@@ -1,6 +1,7 @@
 package com.enofex.naikan.model.deserializer;
 
 
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.enofex.naikan.model.deserializer.json.DefaultJsonDeserializer;
@@ -12,6 +13,6 @@ class DeserializerFactoryTest {
   void shouldReturnJsonDeserializer() {
     Deserializer deserializer = DeserializerFactory.newJsonDeserializer();
 
-    assertTrue(deserializer instanceof DefaultJsonDeserializer);
+    assertInstanceOf(DefaultJsonDeserializer.class, deserializer);
   }
 }

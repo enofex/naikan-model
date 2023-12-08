@@ -30,12 +30,12 @@ class DefaultValidatorTest {
       for (BomFile file : files) {
         if (file.name().endsWith(".json")) {
 
-          if (file.name().startsWith("valid") && schemaVersion != null) {
+          if (file.name().startsWith("valid")) {
             dynamicTests.add(
                 DynamicTest.dynamicTest(file.name(),
                     () -> assertTrue(isValidJson(schemaVersion, file))
                 ));
-          } else if (file.name().startsWith("invalid") && schemaVersion != null) {
+          } else if (file.name().startsWith("invalid")) {
             dynamicTests.add(
                 DynamicTest.dynamicTest(file.name(),
                     () -> assertFalse(isValidJson(schemaVersion, file))

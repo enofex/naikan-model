@@ -1,6 +1,7 @@
 package com.enofex.naikan.model.serializer;
 
 
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.enofex.naikan.model.BomSchema;
@@ -13,6 +14,6 @@ class SerializerFactoryTest {
   void shouldReturnJsonSerializer() {
     Serializer serializer = SerializerFactory.newJsonSerializer(BomSchema.Version.VERSION_10);
 
-    assertTrue(serializer instanceof JsonSerializer);
+    assertInstanceOf(JsonSerializer.class, serializer);
   }
 }

@@ -3,6 +3,7 @@ package com.enofex.naikan.model.serializer.json;
 
 import static com.enofex.naikan.test.model.Boms.validBom0asInputStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.enofex.naikan.model.Bom;
@@ -41,7 +42,7 @@ class JsonSerializerTest {
 
     JsonSerializer serializer = (JsonSerializer) SerializerFactory.newJsonSerializer(
         BomSchema.Version.VERSION_10);
-    assertTrue(serializer instanceof JsonSerializer10);
+    assertInstanceOf(JsonSerializer10.class, serializer);
     assertEquals(BomSchema.Version.VERSION_10, serializer.getSchemaVersion());
 
     File file = serializer.toFile(bom, this.tempFile.getAbsolutePath());
