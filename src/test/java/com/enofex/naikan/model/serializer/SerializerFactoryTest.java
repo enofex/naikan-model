@@ -2,7 +2,6 @@ package com.enofex.naikan.model.serializer;
 
 
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.enofex.naikan.model.BomSchema;
 import com.enofex.naikan.model.serializer.json.JsonSerializer;
