@@ -4,7 +4,6 @@ import com.enofex.naikan.model.Bom;
 import com.enofex.naikan.model.BomSchema;
 import com.enofex.naikan.model.module.ObjectMapperFactory;
 import com.enofex.naikan.model.serializer.SerializerFactory;
-import com.enofex.naikan.model.serializer.json.JsonSerializer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -141,14 +140,12 @@ public class DefaultValidator extends BomSchema implements Validator {
 
   @Override
   public boolean isValid(Bom bom) {
-    return validate(
-        ((JsonSerializer) SerializerFactory.newJsonSerializer()).toJsonString(bom)).isEmpty();
+    return validate(SerializerFactory.newJsonSerializer().toString(bom)).isEmpty();
   }
 
   @Override
   public boolean isValid(Bom bom, Version schemaVersion) {
-    return validate(((JsonSerializer) SerializerFactory.newJsonSerializer()).toJsonString(bom),
-        schemaVersion).isEmpty();
+    return validate(SerializerFactory.newJsonSerializer().toString(bom), schemaVersion).isEmpty();
   }
 
   @Override

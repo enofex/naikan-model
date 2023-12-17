@@ -42,11 +42,7 @@ public final class JsonSerializer10 extends AbstractJsonSerializer {
 
   @Override
   public String toJsonString(Bom bom) {
-    try {
-      return toJson(modifyBom(bom), true);
-    } catch (SerializerException e) {
-      return "";
-    }
+    return this.toString(bom);
   }
 
   @Override
