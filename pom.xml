@@ -29,7 +29,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <naikan-test.version>0.0.19</naikan-test.version>
+    <naikan-test.version>0.0.20</naikan-test.version>
     <commons-io.version>2.15.1</commons-io.version>
     <jackson-datatype-jsr310.version>2.16.0</jackson-datatype-jsr310.version>
     <json-schema-validator.version>1.1.0</json-schema-validator.version>
