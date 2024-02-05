@@ -33,7 +33,7 @@
     <commons-io.version>2.15.1</commons-io.version>
     <jackson-datatype-jsr310.version>2.16.1</jackson-datatype-jsr310.version>
     <json-schema-validator.version>1.2.0</json-schema-validator.version>
-    <junit-jupiter.version>5.10.1</junit-jupiter.version>
+    <junit-jupiter.version>5.10.2</junit-jupiter.version>
     <archunit.version>1.2.1</archunit.version>
 
     <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
