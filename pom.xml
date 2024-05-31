@@ -13,7 +13,7 @@
   <artifactId>naikan-model</artifactId>
   <version>1.0.4-SNAPSHOT</version>
   <name>Naikan Model</name>
-  <inceptionYear>2023</inceptionYear>
+  <inceptionYear>2024</inceptionYear>
 
   <url>https://naikan.io</url>
   <description>
@@ -145,7 +145,7 @@
               <configuration>
                 <rules>
                   <requireJavaVersion>
-                    <version>17</version>
+                    <version>${java.version}</version>
                   </requireJavaVersion>
                 </rules>
               </configuration>
