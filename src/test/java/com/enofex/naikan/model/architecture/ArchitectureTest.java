@@ -1,15 +1,30 @@
 package com.enofex.naikan.model.architecture;
 
 
-import com.enofex.naikan.test.architecture.ArchUnitTestsConfig;
-import java.util.Collection;
-import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.TestFactory;
+import com.enofex.taikai.Taikai;
+import org.junit.jupiter.api.Test;
 
 class ArchitectureTest {
 
-  @TestFactory
-  Collection<DynamicTest> shouldFulfilArchitectureConstrains() {
-    return ArchUnitTestsConfig.defaultConfig().getDynamicTests();
+  @Test
+  void shouldFulfilConstrains() {
+    Taikai taikai = Taikai.builder()
+        .namespace("com.enofex.naikan.model")
+        .test(test -> test
+            .junit5(junit5 -> junit5
+                .classesShouldNotBeAnnotatedWithDisabled()
+                .methodsShouldNotBeAnnotatedWithDisabled()))
+        .java(java -> java
+            .imports(imports -> imports
+                .shouldHaveNoCycles()
+                .shouldNotImport("..shaded..")
+                .shouldNotImport("..lombok..")
+                .shouldNotImport("org.junit.."))
+            .naming(naming -> naming
+                .classesShouldNotMatch(".*Impl")
+                .interfacesShouldNotHavePrefixI()))
+        .build();
+
+    taikai.check();
   }
 }
