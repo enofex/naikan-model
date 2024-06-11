@@ -15,9 +15,11 @@ Maven Usage
 <dependency>
   <groupId>com.enofex</groupId>
   <artifactId>naikan-model</artifactId>
-  <version>1.0.3</version>
+  <version>${naikan-model.version}</version>
 </dependency>
 ```
+
+The `${naikan-model.version}` property should be defined as a property in your Maven project to specify the version.
 
 ## Contributing
 
