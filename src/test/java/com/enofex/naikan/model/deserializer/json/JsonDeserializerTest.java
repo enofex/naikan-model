@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 import com.enofex.naikan.model.Bom;
-import com.enofex.naikan.model.deserializer.DeserializerException;
 import com.enofex.naikan.model.deserializer.DeserializerFactory;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
@@ -15,7 +14,7 @@ import org.junit.jupiter.api.Test;
 class JsonDeserializerTest {
 
   @Test
-  void shouldDeserializeValidModel() throws DeserializerException {
+  void shouldDeserializeValidModel() {
     Bom bom = DeserializerFactory.newJsonDeserializer().of(validBom0asInputStream());
 
     assertAll(() -> assertNull(bom.id()), () -> assertEquals("Naikan", bom.bomFormat()),

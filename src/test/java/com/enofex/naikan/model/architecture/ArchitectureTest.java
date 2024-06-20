@@ -1,15 +1,46 @@
 package com.enofex.naikan.model.architecture;
 
-
-import com.enofex.naikan.test.architecture.ArchUnitTestsConfig;
-import java.util.Collection;
-import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.TestFactory;
+import com.enofex.taikai.Taikai;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import org.junit.jupiter.api.Test;
 
 class ArchitectureTest {
 
-  @TestFactory
-  Collection<DynamicTest> shouldFulfilArchitectureConstrains() {
-    return ArchUnitTestsConfig.defaultConfig().getDynamicTests();
+  @Test
+  void shouldFulfilConstrains() {
+    Taikai.builder()
+        .namespace("com.enofex.naikan.model")
+        .test(test -> test
+            .junit5(junit5 -> junit5
+                .classesShouldNotBeAnnotatedWithDisabled()
+                .classesShouldBePackagePrivate(".*Test")
+                .methodsShouldNotBeAnnotatedWithDisabled()
+                .methodsShouldMatch("should.*")
+                .methodsShouldBePackagePrivate()
+                .methodsShouldNotDeclareExceptions()))
+        .java(java -> java
+            .noUsageOfSystemOutOrErr()
+            .noUsageOf(Date.class)
+            .noUsageOf(Calendar.class)
+            .noUsageOf(SimpleDateFormat.class)
+            .classesShouldImplementHashCodeAndEquals()
+            .finalClassesShouldNotHaveProtectedMembers()
+            .methodsShouldNotDeclareGenericExceptions()
+            .fieldsShouldNotBePublic()
+            .serialVersionUIDFieldsShouldBeStaticFinalLong()
+            .imports(imports -> imports
+                .shouldHaveNoCycles()
+                .shouldNotImport("..shaded..")
+                .shouldNotImport("..internal..")
+                .shouldNotImport("..lombok..")
+                .shouldNotImport("org.junit.."))
+            .naming(naming -> naming
+                .classesShouldNotMatch(".*Impl")
+                .interfacesShouldNotHavePrefixI()
+                .constantsShouldFollowConvention()))
+        .build()
+        .check();
   }
 }
