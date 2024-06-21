@@ -39,7 +39,7 @@ class ArchitectureTest {
             .naming(naming -> naming
                 .classesShouldNotMatch(".*Impl")
                 .interfacesShouldNotHavePrefixI()
-                .constantsShouldFollowConvention()))
+                .constantsShouldFollowConventions()))
         .build()
         .check();
   }
