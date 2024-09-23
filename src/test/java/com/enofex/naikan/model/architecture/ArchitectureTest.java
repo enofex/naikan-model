@@ -14,6 +14,7 @@ class ArchitectureTest {
         .namespace("com.enofex.naikan.model")
         .test(test -> test
             .junit5(junit5 -> junit5
+                .methodsShouldContainAssertionsOrVerifications()
                 .classesShouldNotBeAnnotatedWithDisabled()
                 .classesShouldBePackagePrivate(".*Test")
                 .methodsShouldNotBeAnnotatedWithDisabled()
@@ -21,6 +22,7 @@ class ArchitectureTest {
                 .methodsShouldBePackagePrivate()
                 .methodsShouldNotDeclareExceptions()))
         .java(java -> java
+            .classesShouldResideInPackage("com.enofex.naikan.model..")
             .noUsageOfSystemOutOrErr()
             .noUsageOf(Date.class)
             .noUsageOf(Calendar.class)
@@ -37,7 +39,6 @@ class ArchitectureTest {
                 .shouldNotImport("..lombok..")
                 .shouldNotImport("org.junit.."))
             .naming(naming -> naming
-                .packagesShouldMatch("com.enofex.naikan.model..")
                 .classesShouldNotMatch(".*Impl")
                 .interfacesShouldNotHavePrefixI()
                 .constantsShouldFollowConventions()))
