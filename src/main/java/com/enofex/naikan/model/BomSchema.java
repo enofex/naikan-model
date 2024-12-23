@@ -12,7 +12,7 @@ import java.util.Map;
 
 public abstract class BomSchema {
 
-  public static final String NS_BOM_10 = "https://naikan.io/schema/bom/1.0";
+  public static final String NS_BOM_10 = "https://enofex.github.io/naikan/schema/bom/1.0";
   public static final Version VERSION_LATEST = Version.VERSION_10;
 
   public enum Version {
@@ -39,7 +39,7 @@ public abstract class BomSchema {
       throws IOException {
     SchemaValidatorsConfig config = new SchemaValidatorsConfig();
     Map<String, String> offlineMappings = Map.of(
-        "https://naikan.io/schema/bom-1.0.schema.json",
+        "https://enofex.github.io/naikan/schema/bom-1.0.schema.json",
         getClass()
             .getClassLoader()
             .getResource(schemaFile(schemaVersion))

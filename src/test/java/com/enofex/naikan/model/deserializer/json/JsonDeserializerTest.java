@@ -23,7 +23,7 @@ class JsonDeserializerTest {
 
         () -> assertEquals("Naikan I", bom.project().name()),
         () -> assertEquals("2003", bom.project().inceptionYear()),
-        () -> assertEquals("https://naikan.io", bom.project().url()),
+        () -> assertEquals("https://enofex.github.io/naikan", bom.project().url()),
         () -> assertEquals("https://github.com/enofex/naikan-projects", bom.project().repository()),
         () -> assertEquals("jar", bom.project().packaging()),
         () -> assertEquals("com.enofex", bom.project().groupId()),
@@ -33,7 +33,7 @@ class JsonDeserializerTest {
         () -> assertEquals("Naikan notes", bom.project().notes()),
 
         () -> assertEquals("Naikan", bom.organization().name()),
-        () -> assertEquals("https://naikan.io", bom.organization().url()),
+        () -> assertEquals("https://enofex.github.io/naikan", bom.organization().url()),
         () -> assertEquals("Software department", bom.organization().department()),
         () -> assertEquals("Company projects at a glance", bom.organization().description()),
 
@@ -41,12 +41,13 @@ class JsonDeserializerTest {
         () -> assertEquals("Staging", bom.environments().all().getFirst().name()),
         () -> assertEquals("Staging description",
             bom.environments().all().getFirst().description()),
-        () -> assertEquals("staging.naikan.io", bom.environments().all().getFirst().location()),
+        () -> assertEquals("staging.enofex.github.io/naikan",
+            bom.environments().all().getFirst().location()),
         () -> assertEquals(1, bom.environments().all().getFirst().tags().all().size()),
         () -> assertEquals("Staging", bom.environments().all().getFirst().tags().all().getFirst()),
         () -> assertEquals("Production", bom.environments().all().get(1).name()),
         () -> assertEquals("Production description", bom.environments().all().get(1).description()),
-        () -> assertEquals("naikan.io", bom.environments().all().get(1).location()),
+        () -> assertEquals("enofex.github.io/naikan", bom.environments().all().get(1).location()),
         () -> assertEquals(0, bom.environments().all().get(1).tags().all().size()),
 
         () -> assertEquals(1, bom.teams().all().size()),
@@ -99,14 +100,16 @@ class JsonDeserializerTest {
 
         () -> assertEquals(2, bom.documentations().all().size()),
         () -> assertEquals("Architecture overview", bom.documentations().all().getFirst().name()),
-        () -> assertEquals("naikan.io/arch24", bom.documentations().all().getFirst().location()),
+        () -> assertEquals("enofex.github.io/naikan/arch24",
+            bom.documentations().all().getFirst().location()),
         () -> assertEquals("ARC24", bom.documentations().all().getFirst().description()),
         () -> assertEquals(2, bom.documentations().all().getFirst().tags().all().size()),
         () -> assertEquals("Architecture",
             bom.documentations().all().getFirst().tags().all().getFirst()),
         () -> assertEquals("ARC24", bom.documentations().all().getFirst().tags().all().get(1)),
         () -> assertEquals("Technical debt", bom.documentations().all().get(1).name()),
-        () -> assertEquals("wiki.naikan.io/techdebt", bom.documentations().all().get(1).location()),
+        () -> assertEquals("wiki.enofex.github.io/naikan/techdebt",
+            bom.documentations().all().get(1).location()),
         () -> assertEquals("Should be reduced!", bom.documentations().all().get(1).description()),
 
         () -> assertEquals(5, bom.integrations().all().size()),
@@ -136,7 +139,8 @@ class JsonDeserializerTest {
 
         () -> assertEquals(2, bom.deployments().all().size()),
         () -> assertEquals("Staging", bom.deployments().all().getFirst().environment()),
-        () -> assertEquals("staging.naikan.io", bom.deployments().all().getFirst().location()),
+        () -> assertEquals("staging.enofex.github.io/naikan",
+            bom.deployments().all().getFirst().location()),
         () -> assertEquals("1.0.0", bom.deployments().all().getFirst().version()),
         () -> assertEquals(LocalDateTime.parse("2022-12-28T08:29:10.079226"),
             bom.deployments().all().getFirst().timestamp()),
