@@ -35,7 +35,7 @@
     <json-schema-validator.version>1.2.0</json-schema-validator.version>
     <junit-jupiter.version>5.12.1</junit-jupiter.version>
     <archunit.version>1.4.0</archunit.version>
-    <taikai.version>1.10.0</taikai.version>
+    <taikai.version>1.12.0</taikai.version>
 
     <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
     <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
