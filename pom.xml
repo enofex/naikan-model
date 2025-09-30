@@ -33,7 +33,7 @@
     <commons-io.version>2.20.0</commons-io.version>
     <jackson-datatype-jsr310.version>2.20.0</jackson-datatype-jsr310.version>
     <json-schema-validator.version>1.2.0</json-schema-validator.version>
-    <junit-jupiter.version>5.13.4</junit-jupiter.version>
+    <junit-jupiter.version>6.0.0</junit-jupiter.version>
     <archunit.version>1.4.1</archunit.version>
     <taikai.version>1.37.0</taikai.version>
 
