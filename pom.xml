@@ -31,7 +31,7 @@
 
     <naikan-test.version>1.5.0</naikan-test.version>
     <commons-io.version>2.20.0</commons-io.version>
-    <jackson-datatype-jsr310.version>2.20.0</jackson-datatype-jsr310.version>
+    <jackson-datatype-jsr310.version>2.20.1</jackson-datatype-jsr310.version>
     <json-schema-validator.version>1.2.0</json-schema-validator.version>
     <junit-jupiter.version>6.0.0</junit-jupiter.version>
     <archunit.version>1.4.1</archunit.version>
