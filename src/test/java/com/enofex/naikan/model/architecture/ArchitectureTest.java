@@ -43,6 +43,6 @@ class ArchitectureTest {
                 .interfacesShouldNotHavePrefixI()
                 .constantsShouldFollowConventions()))
         .build()
-        .check();
+        .checkAll();
   }
 }
